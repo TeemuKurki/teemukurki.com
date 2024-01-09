@@ -7,7 +7,10 @@ import sitemap from "lume/plugins/sitemap.ts";
 import slugify_urls from "lume/plugins/slugify_urls.ts";
 import nav from "lume/plugins/nav.ts";
 
+const webappUrl = Deno.env.get("WEBAPP_URL");
+
 const site = lume({
+  location: webappUrl ? new URL(webappUrl) : undefined,
   src: "./src",
   dest: "_site",
   includes: "_includes",

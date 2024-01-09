@@ -1,0 +1,79 @@
+$content-width: 1000px;
+
+header {
+  $_navLinkSize: 1.5rem;
+  height: calc($_navLinkSize * 3);
+  border-bottom: 1px solid gray;
+  display: grid;
+  justify-items: center;
+
+  > nav {
+    width: min(100%, calc($content-width * 1.5));
+    display: flex;
+    justify-content: end;
+    column-gap: 1em;
+    align-items: center;
+    padding-inline: 2em;
+
+    a {
+      font-size: $_navLinkSize;
+      text-decoration: none;
+      color: #5b5b66;
+      position: relative;
+      &.active::after {
+        width: 100%;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+      &::after {
+        content: "";
+        transition: width 250ms;
+        position: absolute;
+        background-color: rgb(122, 100, 247);
+        height: 2px;
+        width: 0%;
+        bottom: 0;
+        left: 0%;
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-inline: 1em;
+}
+
+code {
+  border: 1px solid gainsboro;
+  border-radius: 2px;
+}
+
+.content {
+  width: min(100%, $content-width);
+}
+
+
+.page-selector {
+  a,span {
+    border: 1px solid #5b5b66;
+    padding-inline: .5em;
+    padding-block: .25em;
+    text-decoration: none;
+    cursor: pointer;
+    
+    &:hover,&.disabled {
+      background-color: #00000010;
+    }
+    &.disabled {
+      cursor: default;
+    }
+    &.current {
+      background-color: unset;
+      cursor: default;
+    }
+  }
+}

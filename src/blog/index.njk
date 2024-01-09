@@ -1,0 +1,14 @@
+---
+layout: layouts/root.njk
+title: Teemu Kurki - Blogit
+---
+
+<div class="content" >
+  <h1>Viimeiset kirjoitukset</h1>
+  <div class="blog-card-list">
+    {% asyncEach item in nav.menu("/blog/").children %}
+        {% include "templates/blogPostCard.njk" %}
+    {% endeach %}
+
+  </div>
+</div>

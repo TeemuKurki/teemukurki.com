@@ -1,0 +1,29 @@
+---
+layout: layouts/root.njk
+title: Teemu Kurki - CD Kokoelma
+---
+
+<div class="content">
+  <h1>CD Kokoelma</h1>
+  
+  {{ comp.pageSelector({ currentPage: currentPage, allPages: allPages })  |  safe }}
+  <div class="cd-collection--list">
+    {% for album in albums %}
+      <section class="cd-collection--item" >
+        <div>
+          <h2>{{ album.artist }}</h2>
+          <p>{{ album.title }}</p>
+        </div>
+        <a target="_blank" href="https://musicbrainz.org/release/{{album.id}}" rel="noopener noreferrer">
+          <img
+            class="album-cover shadow"
+            loading="lazy"
+            src="{{ album.img }}"
+            alt="{{ album.artist }} - {{ album.title }}"
+            onerror='this.onerror = null; this.src="{{ album.altImg }}" '
+          />
+        </a>
+      </section>
+    {% endfor %}
+  </div>
+</div>

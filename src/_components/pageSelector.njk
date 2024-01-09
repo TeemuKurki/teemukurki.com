@@ -1,0 +1,23 @@
+<nav class="page-selector" >
+    {% if currentPage <= 1 %}
+        <span class="first disabled">1</span>
+    {% else %}
+        <a href="/collection/1" class="first">1</a>
+    {% endif %}
+    {% if currentPage > 1 %}
+        <a href="/collection/{{currentPage-1}}" class="prev"><</a>
+    {% else %}
+        <span class="prev disabled"><</span>
+    {% endif %}
+        <span class="current">{{currentPage}}</span>
+    {% if currentPage < allPages %}
+        <a href="/collection/{{currentPage+1}}" class="next">></a>        
+    {% else %}
+        <span class="next disabled">></span>
+    {% endif %}
+    {% if currentPage >= allPages %}
+        <span class="last disabled">{{allPages}}</span>     
+    {% else %}
+        <a href="/collection/{{allPages}}" class="last">{{allPages}}</a>
+    {% endif %}
+</nav>

@@ -66,7 +66,7 @@ export default async function* () {
     const page = pages[index];
     const currentPage = index + 1;
     yield {
-      url: `./collection/${currentPage}`,
+      url: `./collection/${currentPage}/index.html`,
       layout: "layouts/collection.njk",
       currentPage: currentPage,
       allPages: pages.length,

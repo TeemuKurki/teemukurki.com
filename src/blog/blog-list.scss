@@ -16,8 +16,8 @@ $content-width: 1000px;
 }
 
 .card.blog-card {
-  $_imgHeight: 200px;
-  $_imgWidth: 200px;
+  $_imgHeight: 128px;
+  $_imgWidth: 128px;
 
   @include Breakpoints.small {
     display: grid;

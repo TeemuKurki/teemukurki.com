@@ -13,12 +13,12 @@
     }
 
 
-    section {
+    .cd-collection--item {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
 
-        @include breakpoints.small {
+        @include breakpoints.medium {
             flex-direction: row;
         }
     }
@@ -26,8 +26,10 @@
 
 .album-cover {
     width: 250px;
+    max-width: 250px;
     min-height: 200px;
     object-fit: contain;
+    background-color: #80808060;
     &.shadow {
         box-shadow: rgba(0,0,0,.3) 3px 3px 5px
     }

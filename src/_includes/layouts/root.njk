@@ -6,10 +6,12 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/styles/styles.css">
   </head>
-  {% include "templates/header.njk" %}
   <body>
-    <main>
-      {{ content | safe }}
-    </main>
+    <div class="body">
+      {% include "templates/header.njk" %}
+      <main class="main">
+        {{ content | safe }}
+      </main>
+    </div>
   </body>
 </html>

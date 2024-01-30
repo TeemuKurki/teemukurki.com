@@ -15,7 +15,7 @@ header {
     align-items: center;
     padding-inline: 2em;
 
-    a {
+    .nav-link {
       font-size: $_navLinkSize;
       text-decoration: none;
       color: #5b5b66;
@@ -41,10 +41,18 @@ header {
   }
 }
 
-main {
+.body {
+  min-height: 100vh;
+  display:flex; 
+  flex-direction:column;
+}
+
+
+.main {
   display: flex;
   justify-content: center;
   margin-inline: 1em;
+  flex: 1;
 }
 
 code {

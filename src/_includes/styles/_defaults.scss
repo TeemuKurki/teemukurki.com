@@ -11,9 +11,11 @@ body {
 }
 h1, .h1 {
   margin-block: 2rem;
+  font-size: 2rem;
 }
 h2, .h2 {
   margin-block: 1.5rem;
+  font-size: 1.5rem;
 }
 h3, .h3,
 h4, .h4,
@@ -24,21 +26,15 @@ h6, .h6 {
 p, .p {
   margin-bottom: 0.75rem;
 }
-.h1 {
-  font-size: 2rem;
-}
-.h2 {
-  font-size: 1.5rem;
-}
-.h3 {
+h3, .h3 {
   font-size: 1.25rem;
 }
-.h4 {
+h4, .h4 {
   font-size: 1rem;
 }
-.h5 {
+h5, .h5 {
   font-size: .85rem;
 }
-.h6 {
+h6, .h6 {
   font-size: .65rem;
 }

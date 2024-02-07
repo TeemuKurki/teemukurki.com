@@ -66,21 +66,25 @@ code {
 
 
 .page-selector {
-  a,span {
+  margin-block: 1em;
+  .current {
     border: 1px solid #5b5b66;
-    padding-inline: .5em;
+    border-radius: 50%;
+  }
+  a,span {
+    color: unset; //TODO: Add custom default text color
+    padding-inline: .62em;
     padding-block: .25em;
     text-decoration: none;
     cursor: pointer;
     
-    &:hover,&.disabled {
+    &:hover:not(.disabled) {
       background-color: #00000010;
     }
     &.disabled {
       cursor: default;
     }
     &.current {
-      background-color: unset;
       cursor: default;
     }
   }

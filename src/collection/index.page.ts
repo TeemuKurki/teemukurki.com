@@ -69,7 +69,7 @@ export default async function* () {
       url: `./collection/${currentPage}/index.html`,
       layout: "layouts/collection.njk",
       currentPage: currentPage,
-      allPages: pages.length,
+      allPages: pages,
       albums: page.map((album) => {
         const [img, altImg] = album.img.split(";")
         return {

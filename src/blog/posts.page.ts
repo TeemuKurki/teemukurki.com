@@ -84,7 +84,7 @@ export default async function* () {
     yield {
       url: `./${post.title}/`,
       layout: "layouts/blog.njk",
-      title: `Teemu Kurki - ${post.title}`,
+      title: `${post.title}`,
       body: post.blog,
       leadText: post.leadText,
       image: data.includes?.Asset[0].fields,

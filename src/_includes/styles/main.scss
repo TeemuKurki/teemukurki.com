@@ -79,7 +79,8 @@ code {
     cursor: pointer;
     
     &:hover:not(.disabled) {
-      background-color: #00000010;
+      border: 1px solid #a6a6a6;
+      border-radius: 50%;
     }
     &.disabled {
       cursor: default;

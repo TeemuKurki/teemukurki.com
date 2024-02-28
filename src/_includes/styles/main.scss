@@ -67,6 +67,13 @@ code {
 
 .page-selector {
   margin-block: 1em;
+
+  //Cool bottom curve :)
+  display: inline-flex;
+  border-bottom: 3px solid #bbb;
+  border-radius: 50%;
+  padding-bottom: 5px;
+
   .current {
     outline: 1px solid #5b5b66;
     border-radius: 50%;

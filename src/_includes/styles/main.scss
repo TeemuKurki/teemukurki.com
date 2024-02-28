@@ -68,7 +68,7 @@ code {
 .page-selector {
   margin-block: 1em;
   .current {
-    border: 1px solid #5b5b66;
+    outline: 1px solid #5b5b66;
     border-radius: 50%;
   }
   a,span {
@@ -79,7 +79,7 @@ code {
     cursor: pointer;
     
     &:hover:not(.disabled) {
-      border: 1px solid #a6a6a6;
+      outline: 1px solid #a6a6a6;
       border-radius: 50%;
     }
     &.disabled {

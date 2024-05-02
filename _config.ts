@@ -6,6 +6,7 @@ import sass from "lume/plugins/sass.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import slugify_urls from "lume/plugins/slugify_urls.ts";
 import nav from "lume/plugins/nav.ts";
+import metas from "lume/plugins/metas.ts";
 
 const webappUrl = Deno.env.get("WEBAPP_URL");
 
@@ -25,6 +26,7 @@ site.use(sass());
 site.use(sitemap());
 site.use(slugify_urls());
 site.use(nav());
+site.use(metas())
 
 site.filter("log", (value) => console.log(value));
 

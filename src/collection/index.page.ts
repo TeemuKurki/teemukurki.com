@@ -20,15 +20,6 @@ const sortAlbums = (list: Album[]): Album[] => {
   });
 };
 
-const makePages = (list: Album[]): Album[][] => {
-  const pages: Album[][] = [];
-  const pageSize = 20;
-  for (let index = 0; index < list.length; index += pageSize) {
-    const chunk = list.slice(index, index + pageSize);
-    pages.push(chunk);
-  }
-  return pages;
-};
 
 export default async function* () {
   const user = Deno.env.get("MUSICBRAINZ_API_USER");
@@ -60,9 +51,22 @@ export default async function* () {
   }
 
   sortAlbums(collections);
-  const pages = makePages(collections);
+  yield {
+    layout: "layouts/collection.njk",
+    albums: collections.map((album) => {
+      const [img, altImg] = album.img.split(";")
+      return {
+        img: img,
+        altImg: altImg, 
+        artist: album.artist,
+        title: album.title,
+        id: album.id,
+      }
+    })
+  }
 
-  for (let index = 0; index < pages.length; index++) {
+
+  /* for (let index = 0; index < pages.length; index++) {
     const page = pages[index];
     const currentPage = index + 1;
     yield {
@@ -81,5 +85,5 @@ export default async function* () {
         }
       }),
     };
-  }
+  } */
 }

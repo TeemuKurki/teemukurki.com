@@ -64,26 +64,4 @@ export default async function* () {
       }
     })
   }
-
-
-  /* for (let index = 0; index < pages.length; index++) {
-    const page = pages[index];
-    const currentPage = index + 1;
-    yield {
-      url: `./collection/${currentPage}/index.html`,
-      layout: "layouts/collection.njk",
-      currentPage: currentPage,
-      allPages: pages,
-      albums: page.map((album) => {
-        const [img, altImg] = album.img.split(";")
-        return {
-          img: img,
-          altImg: altImg, 
-          artist: album.artist,
-          title: album.title,
-          id: album.id,
-        }
-      }),
-    };
-  } */
 }

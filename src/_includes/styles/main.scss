@@ -63,37 +63,3 @@ code {
 .content {
   width: min(100%, $content-width);
 }
-
-
-.page-selector {
-  margin-block: 1em;
-
-  //Cool bottom curve :)
-  display: inline-flex;
-  border-bottom: 3px solid #bbb;
-  border-radius: 50%;
-  padding-bottom: 5px;
-
-  .current {
-    outline: 1px solid #5b5b66;
-    border-radius: 50%;
-  }
-  a,span {
-    color: unset; //TODO: Add custom default text color
-    padding-inline: .62em;
-    padding-block: .25em;
-    text-decoration: none;
-    cursor: pointer;
-    
-    &:hover:not(.disabled) {
-      outline: 1px solid #a6a6a6;
-      border-radius: 50%;
-    }
-    &.disabled {
-      cursor: default;
-    }
-    &.current {
-      cursor: default;
-    }
-  }
-}

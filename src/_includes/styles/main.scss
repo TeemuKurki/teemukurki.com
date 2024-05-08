@@ -22,7 +22,7 @@ header {
       color: #5b5b66;
       position: relative;
       &.active::after {
-        //scale: 1 1;
+        scale: 1 1;
       }
       //Underline animation by Kevin Powell https://www.youtube.com/watch?v=G_h2pGZcOzc
       &:hover {
@@ -32,12 +32,12 @@ header {
         &:hover + a {
           --_translate: -100%;
           --_scale-delay: 300ms;
-          --_translate-delay: 200ms;
+          --_translate-delay: 50ms;
         }
         &:has(+:hover) {
           --_translate: 100%;
           --_scale-delay: 300ms;
-          --_translate-delay: 200ms;
+          --_translate-delay: 50ms;
         }
       }
 

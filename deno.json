@@ -1,16 +1,14 @@
 {
   "tasks": {
-    "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -",
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run --allow-read --allow-sys=networkInterfaces --allow-write=./_site --allow-net --allow-env -",
     "build": "deno task lume",
     "serve": "deno task lume -s"
   },
   "imports": {
-    "@teemukurki/rate-limiter": "jsr:@teemukurki/rate-limiter@^0.0.1",
-    "lume/": "https://deno.land/x/lume@v2.1.4/"
+    "@teemukurki/rate-limiter": "jsr:@teemukurki/rate-limiter@^0.0.3",
+    "lume/": "https://deno.land/x/lume@v2.2.1/"
   },
   "compilerOptions": {
-    "types": [
-      "lume/types.ts"
-    ]
+    "types": ["lume/types.ts"]
   }
 }

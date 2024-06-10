@@ -3,7 +3,7 @@
     "lume": "echo \"import 'lume/cli.ts'\" | deno run --allow-read --allow-sys=networkInterfaces --allow-write=./_site --allow-net --allow-env -",
     "build": "deno task lume",
     "serve": "deno task deleteImgMeta && deno task lume -s",
-    "deleteImgMeta": "exiftool -all= src/assets/images/*"
+    "deleteImgMeta": "exiftool -overwrite_original -all= src/assets/images/*"
   },
   "imports": {
     "@teemukurki/rate-limiter": "jsr:@teemukurki/rate-limiter@^0.0.3",

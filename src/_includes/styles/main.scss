@@ -26,7 +26,8 @@ header {
       &.active:not(:has(~:hover))::after {
         scale: 1 1;
       }
-      //Hide underline from active when hovering on precending links 
+
+      //Hide underline from active when hovering on preceding links
       &:hover ~ .active::after {
         scale: 0 1;
       }
@@ -42,7 +43,7 @@ header {
         --_scale-delay: 300ms;
         --_translate-delay: 50ms;
       }
-      
+
       &:has(+:hover) {
         --_translate: 100%;
         --_scale-delay: 300ms;

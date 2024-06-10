@@ -6,6 +6,7 @@
       "jsr:@std/assert@^0.225.1": "jsr:@std/assert@0.225.3",
       "jsr:@std/assert@^0.225.2": "jsr:@std/assert@0.225.3",
       "jsr:@std/assert@^0.226.0": "jsr:@std/assert@0.226.0",
+      "jsr:@std/cli": "jsr:@std/cli@0.224.5",
       "jsr:@std/cli@0.224.5": "jsr:@std/cli@0.224.5",
       "jsr:@std/cli@^0.224.5": "jsr:@std/cli@0.224.5",
       "jsr:@std/collections@^1.0.0-rc.1": "jsr:@std/collections@1.0.0-rc.1",

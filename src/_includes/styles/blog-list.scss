@@ -1,0 +1,47 @@
+@use "/styles/breakpoints.scss" as Breakpoints;
+
+$content-width: 1000px;
+
+.blog-card-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4em;
+  margin-top: 1em;
+}
+
+.card {
+  padding: 1em;
+  //border: 1px solid gray;
+  width: min(100%, calc($content-width / 1.5));
+}
+
+.card.blog-card {
+  $_imgHeight: 128px;
+  $_imgWidth: 128px;
+
+  @include Breakpoints.small {
+    display: grid;
+  }
+  
+  grid-template-columns: $_imgWidth auto;
+  grid-template-rows: 50px 100px 50px;
+  column-gap: 1em;
+  img {
+    height: $_imgHeight;
+    width: $_imgWidth;
+    border-radius: 25%;
+  }
+
+  .title {
+    margin-top: 0px;
+  }
+  .lead-text {
+    grid-column-start: 2;
+    margin-top: 1em;
+  }
+
+  .blog-link {
+    grid-column-start: 2;
+    align-self: center;
+  }
+}

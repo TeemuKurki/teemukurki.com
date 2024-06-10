@@ -1,0 +1,10 @@
+scripts:
+  lint: deno lint
+  format: deno fmt
+  removeImgMeta: deno task deleteImgMeta
+  pre-commit:
+    cmd:
+      #- vr lint
+      #- vr format
+      - vr removeImgMeta
+    gitHook: pre-commit

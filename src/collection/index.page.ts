@@ -20,7 +20,6 @@ const sortAlbums = (list: Album[]): Album[] => {
   });
 };
 
-
 export default async function* () {
   const user = Deno.env.get("MUSICBRAINZ_API_USER");
   const pass = Deno.env.get("MUSICBRAINZ_API_PASS");
@@ -54,14 +53,14 @@ export default async function* () {
   yield {
     layout: "layouts/collection.njk",
     albums: collections.map((album) => {
-      const [img, altImg] = album.img.split(";")
+      const [img, altImg] = album.img.split(";");
       return {
         img: img,
-        altImg: altImg, 
+        altImg: altImg,
         artist: album.artist,
         title: album.title,
         id: album.id,
-      }
-    })
-  }
+      };
+    }),
+  };
 }

@@ -8,7 +8,7 @@ export type Album = {
   artist: string;
   title: string;
   releaseDate: string;
-  id: string
+  id: string;
 };
 
 interface ReleaseCollection {
@@ -149,19 +149,21 @@ export class Catalog {
     const artP: Promise<Album>[] = collections.releases.map(async (release) => {
       const artist = release["artist-credit"].map((artist) => artist.name)
         .join(", ");
-        
-        let img = `https://coverartarchive.org/release/${release.id}/front-250`
-        if(release["release-group"].id){
-          img += `;https://coverartarchive.org/release-group/${release["release-group"].id}/front-250`
-        }
-        
+
+      let img = `https://coverartarchive.org/release/${release.id}/front-250`;
+      if (release["release-group"].id) {
+        img += `;https://coverartarchive.org/release-group/${
+          release["release-group"].id
+        }/front-250`;
+      }
+
       const title = release.title;
       return {
         img: img,
         artist: artist,
         title: title,
         releaseDate: release.date,
-        id: release.id
+        id: release.id,
       } satisfies Album;
     });
     const pointer = collections.releases.length + offset;

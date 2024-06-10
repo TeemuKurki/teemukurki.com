@@ -1,7 +1,7 @@
 ---
 title: CD kokoelman digitalisaatio
 layout: layouts/blog.njk
-image: /assets/images/hifiberry_koottu.jpeg
+image: /assets/images/hifiberry_komponentit.jpeg
 leadText: Digitalisoin mun CD kokoelman ja lisään ne Raspberry Pi pohjaiselle musiikki serverille ja soittimelle
 ---
 
@@ -11,7 +11,7 @@ Olen vähän yli kymmenen vuotta ostellut suht aktiivisesti CD-levyjä ja minull
 
 ## Projektin komponentit
 
-![hifiberry koottu](/assets/images/hifiberry_koottu.jpeg)
+![hifiberry komponentit](/assets/images/hifiberry_komponentit.jpeg)
 
 - [Raspberry Pi Zero W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)
 - Micro-USB virtalähde
@@ -98,4 +98,4 @@ Lue lisää soittimesta
 [piCorePlayer](https://www.picoreplayer.org/)
 
 ## Lopputulos
-![hifiberry komponentit](/assets/images/hifiberry_komponentit.jpeg)
+![hifiberry koottu](/assets/images/hifiberry_koottu.jpeg)

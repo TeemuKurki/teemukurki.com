@@ -1,7 +1,7 @@
 ---
 title: CD kokoelman digitalisaatio
 layout: layouts/blog.njk
-image: /assets/images/hifiberry_komponentit.jpeg
+image: ../img/hifiberry_komponentit.jpeg
 leadText: Digitalisoin mun CD kokoelman ja lisään ne Raspberry Pi pohjaiselle musiikki serverille ja soittimelle
 ---
 
@@ -12,9 +12,9 @@ on tässä vuosien varrella kertynyt noin 100 levyn kokoelma. Tämän projektin
 tarkoitus on ladata CD kokoelma paikalliselle serverille (tässä tapauksessa vain
 muistikortti) josta pystyn helposti soittamaan levyjä.
 
-## Projektin komponentit
+## Projektin komponentit 
 
-![hifiberry komponentit](/assets/images/hifiberry_komponentit.jpeg)
+![hifiberry komponentit](../img/hifiberry_komponentit.jpeg)
 
 - [Raspberry Pi Zero W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)
 - Micro-USB virtalähde
@@ -60,7 +60,7 @@ ls /media/Music
 
 ### CUERipper
 
-![cueripper-screenshot](/assets/images/cueripper-screenshot.png)
+![cueripper-screenshot](../img/cueripper-screenshot.png)
 
 [CUERipper](http://cue.tools/wiki/CUERipper) on helppokayttöinen työkalu mikä
 pystyy ripata CD:n, hakee albumin kuvan ja varmetaa, että tiedostot ovat
@@ -149,4 +149,4 @@ Lue lisää soittimesta [https://moodeaudio.org/](https://moodeaudio.org/)
 
 ## Lopputulos
 
-![hifiberry koottu](/assets/images/hifiberry_koottu.jpeg)
+![hifiberry koottu](../img/hifiberry_koottu.jpeg)

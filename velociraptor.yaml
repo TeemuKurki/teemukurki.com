@@ -7,5 +7,5 @@ scripts:
       #- vr lint
       #- vr format
       - vr removeImgMeta
-      - git add ./src/assets/images
+      - git add ./src/img
     gitHook: pre-commit

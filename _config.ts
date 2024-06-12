@@ -1,14 +1,34 @@
 import lume from "lume/mod.ts";
+
 import nunjucks from "lume/plugins/nunjucks.ts";
 import code_highlight from "lume/plugins/code_highlight.ts";
-import remark from "lume/plugins/remark.ts";
 import sass from "lume/plugins/sass.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import slugify_urls from "lume/plugins/slugify_urls.ts";
 import nav from "lume/plugins/nav.ts";
 import metas from "lume/plugins/metas.ts";
+import picture from "lume/plugins/picture.ts";
+import transform_images from "lume/plugins/transform_images.ts";
+import resolveUrls from "lume/plugins/resolve_urls.ts";
+import type { Options } from "lume/plugins/markdown.ts";
 
 const webappUrl = Deno.env.get("WEBAPP_URL");
+
+const markdown: Options = {
+  rules: {
+    "image": (tokens, idx, _options, _env, slf) => {
+      const token = tokens[idx]
+      
+      if((token.attrs || []).some((attribute: [string, string]) => {
+        return attribute[0] === "transform-images"
+      })){
+        return `<img alt="${token.content}" ${slf.renderAttrs(token)} />`
+      }
+      return `<img alt="${token.content}" ${slf.renderAttrs(token)} transform-images="avif webp jpeg" />`
+
+    }
+  }
+}
 
 const site = lume({
   location: webappUrl ? new URL(webappUrl) : undefined,
@@ -18,18 +38,19 @@ const site = lume({
   components: {
     variable: "comp",
   },
-});
+}, {markdown});
+
 
 site.use(nunjucks());
 site.use(code_highlight());
-site.use(remark());
 site.use(sass());
 site.use(sitemap());
 site.use(slugify_urls());
 site.use(nav());
 site.use(metas());
-
-site.copy("assets");
+site.use(resolveUrls())
+site.use(picture());
+site.use(transform_images())
 
 site.filter("log", (value) => console.log(value));
 

@@ -17,18 +17,21 @@ const webappUrl = Deno.env.get("WEBAPP_URL");
 const markdown: Options = {
   rules: {
     "image": (tokens, idx, _options, _env, slf) => {
-      const token = tokens[idx]
-      
-      if((token.attrs || []).some((attribute: [string, string]) => {
-        return attribute[0] === "transform-images"
-      })){
-        return `<img alt="${token.content}" ${slf.renderAttrs(token)} />`
+      const token = tokens[idx];
+      const attributes = token.attrs || [];
+      if (
+        attributes.some((attribute: [string, string]) => {
+          return attribute[0] === "transform-images";
+        })
+      ) {
+        return `<img alt="${token.content}" ${slf.renderAttrs(token)} />`;
       }
-      return `<img alt="${token.content}" ${slf.renderAttrs(token)} transform-images="avif jpeg" />`
-
-    }
-  }
-}
+      return `<img alt="${token.content}" ${
+        slf.renderAttrs(token)
+      } transform-images="avif jpeg" />`;
+    },
+  },
+};
 
 const site = lume({
   location: webappUrl ? new URL(webappUrl) : undefined,
@@ -38,8 +41,7 @@ const site = lume({
   components: {
     variable: "comp",
   },
-}, {markdown});
-
+}, { markdown });
 
 site.use(nunjucks());
 site.use(code_highlight());
@@ -48,9 +50,9 @@ site.use(sitemap());
 site.use(slugify_urls());
 site.use(nav());
 site.use(metas());
-site.use(resolveUrls())
+site.use(resolveUrls());
 site.use(picture());
-site.use(transform_images())
+site.use(transform_images());
 
 site.filter("log", (value) => console.log(value));
 

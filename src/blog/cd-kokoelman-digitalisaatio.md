@@ -12,7 +12,7 @@ on tässä vuosien varrella kertynyt noin 100 levyn kokoelma. Tämän projektin
 tarkoitus on ladata CD kokoelma paikalliselle serverille (tässä tapauksessa vain
 muistikortti) josta pystyn helposti soittamaan levyjä.
 
-## Projektin komponentit 
+## Projektin komponentit
 
 ![hifiberry komponentit](../img/hifiberry_komponentit.jpeg)
 

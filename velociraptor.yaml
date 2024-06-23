@@ -5,7 +5,7 @@ scripts:
   pre-commit:
     cmd:
       #- vr lint
-      #- vr format
+      - vr format
       - vr removeImgMeta
       - git add ./src/img
     gitHook: pre-commit

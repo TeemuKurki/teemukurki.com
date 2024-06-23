@@ -146,7 +146,7 @@ export class Catalog {
     await limiter.removeTokens(1);
     const response = await client.fetch(url, { headers: addHeader() });
     const collections = await handleResponse<ReleaseCollection>(response);
-    const artP: Promise<Album>[] = collections.releases.map(async (release) => {
+    const albums: Album[] = collections.releases.map((release) => {
       const artist = release["artist-credit"].map((artist) => artist.name)
         .join(", ");
 
@@ -164,11 +164,11 @@ export class Catalog {
         title: title,
         releaseDate: release.date,
         id: release.id,
-      } satisfies Album;
+      };
     });
     const pointer = collections.releases.length + offset;
     return {
-      data: await Promise.all(artP),
+      data: albums,
       next: collections["release-count"] > pointer,
       pointer: pointer,
     };

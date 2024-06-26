@@ -7,10 +7,15 @@ collection catalog
 
 Install [exiftool](https://exiftool.org/) and [Velociraptor](https://velociraptor.run)
 
+ExifTool is used to strip all metadata from image assets so we don't accidentally publish unwanted information inside
+image metadata.
+
 ```bash
 #Install exiftool
 brew install exiftool
 ```
+
+Velociraptor is used to generate pre-commit hooks
 
 ```bash
 #Install Velociraptor

@@ -1,4 +1,4 @@
-import DigestClient from "npm:digest-fetch";
+import DigestClient from "digest-fetch";
 import { RateLimiter } from "@teemukurki/rate-limiter";
 
 const limiter = new RateLimiter({ tokensPerInterval: 1, interval: "second" });

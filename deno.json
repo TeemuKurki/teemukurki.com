@@ -8,7 +8,8 @@
   "imports": {
     "@std/dotenv": "jsr:@std/dotenv@^0.224.1",
     "@teemukurki/rate-limiter": "jsr:@teemukurki/rate-limiter@^0.0.3",
-    "lume/": "https://deno.land/x/lume@v2.2.1/"
+    "lume/": "https://deno.land/x/lume@v2.2.1/",
+    "digest-fetch": "npm:digest-fetch@3.1.1"
   },
   "compilerOptions": {
     "types": ["lume/types.ts"]

@@ -11,5 +11,8 @@
   },
   "compilerOptions": {
     "types": ["lume/types.ts"]
+  },
+  "fmt": {
+    "lineWidth": 120
   }
 }

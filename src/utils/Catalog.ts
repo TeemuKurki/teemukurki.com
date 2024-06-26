@@ -152,9 +152,7 @@ export class Catalog {
 
       let img = `https://coverartarchive.org/release/${release.id}/front-250`;
       if (release["release-group"].id) {
-        img += `;https://coverartarchive.org/release-group/${
-          release["release-group"].id
-        }/front-250`;
+        img += `;https://coverartarchive.org/release-group/${release["release-group"].id}/front-250`;
       }
 
       const title = release.title;

@@ -1,12 +1,11 @@
 # Personal website
 
-Static site generated with [lume](https://lume.land/). Using
-[Musicbrainz](https://musicbrainz.org/) for music collection catalog
+Static site generated with [lume](https://lume.land/). Using [Musicbrainz](https://musicbrainz.org/) for music
+collection catalog
 
 ## Develpment
 
-Install [exiftool](https://exiftool.org/) and
-[Velociraptor](https://velociraptor.run)
+Install [exiftool](https://exiftool.org/) and [Velociraptor](https://velociraptor.run)
 
 ```bash
 #Install exiftool

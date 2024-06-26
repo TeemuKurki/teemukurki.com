@@ -26,9 +26,7 @@ const markdown: Options = {
       ) {
         return `<img alt="${token.content}" ${slf.renderAttrs(token)} />`;
       }
-      return `<img alt="${token.content}" ${
-        slf.renderAttrs(token)
-      } transform-images="avif jpeg" />`;
+      return `<img alt="${token.content}" ${slf.renderAttrs(token)} transform-images="avif jpeg" />`;
     },
   },
 };

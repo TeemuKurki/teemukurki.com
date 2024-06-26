@@ -55,7 +55,7 @@ site.use(transform_images());
 site.filter("log", (value) => console.log(value));
 
 site.remoteFile(
-  "_includes/styles/generated-code-highlight.scss",
+  "styles/generated-code-highlight.scss",
   "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/a11y-light.min.css",
 );
 

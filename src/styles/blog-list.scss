@@ -22,10 +22,11 @@ $content-width: 1000px;
   @include Breakpoints.small {
     display: grid;
   }
-  
+
   grid-template-columns: $_imgWidth auto;
   grid-template-rows: 50px 100px 50px;
   column-gap: 1em;
+
   img {
     height: $_imgHeight;
     width: $_imgWidth;
@@ -35,6 +36,7 @@ $content-width: 1000px;
   .title {
     margin-top: 0px;
   }
+
   .lead-text {
     grid-column-start: 2;
     margin-top: 1em;

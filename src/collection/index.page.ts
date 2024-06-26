@@ -1,4 +1,4 @@
-import { load } from "https://deno.land/std@0.200.0/dotenv/mod.ts";
+import { load } from "@std/dotenv";
 import { Catalog } from "../utils/Catalog.ts";
 import type { Album } from "../utils/Catalog.ts";
 

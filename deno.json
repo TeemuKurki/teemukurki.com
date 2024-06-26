@@ -6,6 +6,7 @@
     "deleteImgMeta": "exiftool -overwrite_original -if '$MIMEtype=~/video/ or $MIMEtype=~/image/' -all= src/img/*"
   },
   "imports": {
+    "@std/dotenv": "jsr:@std/dotenv@^0.224.1",
     "@teemukurki/rate-limiter": "jsr:@teemukurki/rate-limiter@^0.0.3",
     "lume/": "https://deno.land/x/lume@v2.2.1/"
   },

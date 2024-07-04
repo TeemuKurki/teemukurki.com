@@ -8,7 +8,13 @@
   </head>
   <body>
     <div class="body">
-      {% include "templates/header.njk" %}
+      <header>
+        <nav data-uri={{url}}>
+          <a class="nav-link {{'active' if url === '/' else "" }}" href="/">Etusivu</a>
+          <a class="nav-link {{'active' if url.includes('/blog/') else "" }}" href="/blog">Blogi</a>
+          <a class="nav-link {{'active' if url.includes('/collection/') else "" }}" href="/collection">Kokoelma</a>
+        </nav>
+      </header>
       <main class="main">
         {{ content | safe }}
       </main>

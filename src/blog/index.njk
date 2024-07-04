@@ -8,7 +8,11 @@ title: Teemu Kurki - Blog
   <div class="blog-card-list">
     {% asyncEach item in nav.menu("/blog/").children %}
       {% set blog = item.data %}
-      {% include "templates/blogPostCard.njk" %}
+      <article class="card blog-card w-128">
+          <img alt="{{blog.data.title}} image" src={{blog.image}} transform-images="avif jpeg 128" />
+          <a href={{blog.url}} class="h3 title action">{{blog.title}}</a>
+          <p class="lead-text">{{blog.leadText}}</p>
+      </article>
     {% endeach %}
   </div>
 </div>

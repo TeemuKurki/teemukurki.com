@@ -3,7 +3,9 @@
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
     "build": "deno task lume",
     "serve": "deno task deleteImgMeta && deno task lume -s",
-    "deleteImgMeta": "exiftool -overwrite_original -if '$MIMEtype=~/video/ or $MIMEtype=~/image/' -all= src/img/*"
+    "deleteImgMeta": "exiftool -overwrite_original -if '$MIMEtype=~/video/ or $MIMEtype=~/image/' -all= src/img/*",
+    "test": "deno test --allow-env",
+    "test:coverage": "deno test --coverage --allow-env && deno coverage"
   },
   "imports": {
     "@std/dotenv": "jsr:@std/dotenv@^0.224.1",

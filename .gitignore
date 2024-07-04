@@ -2,3 +2,5 @@ _site
 .env
 _cache
 .DS_Store
+
+/coverage

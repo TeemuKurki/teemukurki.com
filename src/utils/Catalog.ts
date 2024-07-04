@@ -11,7 +11,7 @@ export type Album = {
   id: string;
 };
 
-interface ReleaseCollection {
+export interface ReleaseCollection {
   "release-count": number;
   "release-offset": number;
   releases: Release[];
@@ -71,8 +71,8 @@ interface Area {
   "iso-3166-1-codes": string[];
   name: string;
   "sort-name": string;
-  type: any;
-  "type-id": any;
+  type: unknown;
+  "type-id": unknown;
 }
 
 interface ReleaseGroup {
@@ -82,8 +82,8 @@ interface ReleaseGroup {
   id: string;
   "primary-type": string;
   "primary-type-id": string;
-  "secondary-type-ids": any[];
-  "secondary-types": any[];
+  "secondary-type-ids": unknown[];
+  "secondary-types": unknown[];
   title: string;
 }
 

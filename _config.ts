@@ -28,6 +28,18 @@ const markdown: Options = {
       }
       return `<img alt="${token.content}" ${slf.renderAttrs(token)} transform-images="avif jpeg" />`;
     },
+    "link_open": (tokens, idx, options, _env, slf) => {
+      const attrs: [string, string][] = tokens[idx].attrs;
+      //Check is link is internal. Link is set as internal if href value starts with either "/" or "#"
+      const isInternalLink = attrs.some((attr) =>
+        attr[0] === "href" && (attr[1].startsWith("/") || attr[1].startsWith("#"))
+      );
+      if (!isInternalLink) {
+        tokens[idx].attrSet("target", "_blank");
+        tokens[idx].attrSet("rel", "noopener noreferrer");
+      }
+      return slf.renderToken(tokens, idx, options);
+    },
   },
 };
 

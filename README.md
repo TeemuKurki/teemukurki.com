@@ -23,3 +23,9 @@ With apt
 ```bash
 apt install exiftool
 ```
+
+### Install git hook
+
+```bash
+bash git-hooks/install-pre-commit-hook.sh
+```

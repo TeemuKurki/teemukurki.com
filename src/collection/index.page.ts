@@ -4,12 +4,25 @@ import type { Album } from "../utils/Catalog.ts";
 
 await load({ export: true });
 
+/**
+ * Loads music collection from Musicbrainz and pass data to _includes/layout/collection.njk
+ */
+
+/**
+ * Check if currently running in development mode
+ * @returns {boolean} True if running in development mode
+ */
 const isRunningInDev = (): boolean => {
   return Deno.args.includes("-d");
 };
 
+/**
+ * Sort albums based on artist name and release date
+ * @param list Albums
+ * @returns Sorted Albums list
+ */
 const sortAlbums = (list: Album[]): Album[] => {
-  return list.sort((a, b) => {
+  return list.toSorted((a, b) => {
     const compare = a.artist.localeCompare(b.artist);
     if (compare === 0) {
       const aDate = new Date(a.releaseDate).getTime();
@@ -49,10 +62,10 @@ export default async function* () {
     collections = JSON.parse(localStorage.getItem("cd-collection")!);
   }
 
-  sortAlbums(collections);
+  const sortedAlbums = sortAlbums(collections);
   yield {
     layout: "layouts/collection.njk",
-    albums: collections.map((album) => {
+    albums: sortedAlbums.map((album) => {
       const [img, altImg] = album.img.split(";");
       return {
         img: img,

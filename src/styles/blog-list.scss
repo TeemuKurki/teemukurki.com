@@ -19,13 +19,14 @@ $content-width: 1000px;
   $_imgHeight: 128px;
   $_imgWidth: 128px;
 
+  grid-template-columns: $_imgWidth auto;
+  grid-template-rows: 50px 100px 50px;
+  column-gap: 1em;
+
   @include Breakpoints.small {
     display: grid;
   }
 
-  grid-template-columns: $_imgWidth auto;
-  grid-template-rows: 50px 100px 50px;
-  column-gap: 1em;
 
   img {
     height: $_imgHeight;

@@ -62,9 +62,9 @@ const resolveData = async () => {
     collections = JSON.parse(localStorage.getItem("cd-collection")!);
   }
 
-  sortAlbums(collections);
+  const sortedCollection = sortAlbums(collections);
   return {
-    albums: collections.map((album) => {
+    albums: sortedCollection.map((album) => {
       const [img, altImg] = album.img.split(";");
       return {
         img: img,

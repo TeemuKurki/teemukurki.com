@@ -33,7 +33,7 @@ const sortAlbums = (list: Album[]): Album[] => {
   });
 };
 
-export default async function* () {
+const resolveData = async () => {
   const user = Deno.env.get("MUSICBRAINZ_API_USER");
   const pass = Deno.env.get("MUSICBRAINZ_API_PASS");
   if (!user || !pass) {
@@ -62,10 +62,9 @@ export default async function* () {
     collections = JSON.parse(localStorage.getItem("cd-collection")!);
   }
 
-  const sortedAlbums = sortAlbums(collections);
-  yield {
-    layout: "layouts/collection.njk",
-    albums: sortedAlbums.map((album) => {
+  sortAlbums(collections);
+  return {
+    albums: collections.map((album) => {
       const [img, altImg] = album.img.split(";");
       return {
         img: img,
@@ -76,4 +75,9 @@ export default async function* () {
       };
     }),
   };
-}
+};
+
+const data = await resolveData();
+const albums = data.albums;
+
+export { albums };

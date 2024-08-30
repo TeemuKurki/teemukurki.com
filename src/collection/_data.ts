@@ -9,14 +9,6 @@ await load({ export: true });
  */
 
 /**
- * Check if currently running in development mode
- * @returns {boolean} True if running in development mode
- */
-const isRunningInDev = (): boolean => {
-  return Deno.args.includes("-d");
-};
-
-/**
  * Sort albums based on artist name and release date
  * @param list Albums
  * @returns Sorted Albums list
@@ -41,7 +33,7 @@ const resolveData = async () => {
   }
   const collectionId = Deno.env.get("MUSICBRAINZ_COLLECTION_ID");
   if (!collectionId) {
-    throw Error("Musicbrainz collection id no povided");
+    throw Error("Musicbrainz collection id not povided");
   }
 
   let collections: Album[] = [];
@@ -49,17 +41,12 @@ const resolveData = async () => {
     user,
     pass,
   );
-  if (!isRunningInDev() || !localStorage.getItem("cd-collection")) {
-    try {
-      collections = await client.getEntireCollection(
-        collectionId,
-      );
-      localStorage.setItem("cd-collection", JSON.stringify(collections));
-    } catch (error) {
-      console.error(error);
-    }
-  } else {
-    collections = JSON.parse(localStorage.getItem("cd-collection")!);
+  try {
+    collections = await client.getEntireCollection(
+      collectionId,
+    );
+  } catch (error) {
+    console.error("Failed to fetch music collection", error);
   }
 
   const sortedCollection = sortAlbums(collections);

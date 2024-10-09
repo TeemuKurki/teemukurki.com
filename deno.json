@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run --allow-read --allow-ffi --allow-env --allow-write --allow-net --allow-sys -",
     "build": "deno task lume",
     "serve": "deno task deleteImgMeta && deno task lume -s",
     "deleteImgMeta": "exiftool -overwrite_original -if '$MIMEtype=~/video/ or $MIMEtype=~/image/' -all= src/img/*",
@@ -10,7 +10,7 @@
   "imports": {
     "@std/dotenv": "jsr:@std/dotenv@^0.225.0",
     "@teemukurki/rate-limiter": "jsr:@teemukurki/rate-limiter@^0.0.3",
-    "lume/": "https://deno.land/x/lume@v2.2.4/",
+    "lume/": "https://deno.land/x/lume@v2.3.3/",
     "digest-fetch": "npm:digest-fetch@3.1.1"
   },
   "compilerOptions": {

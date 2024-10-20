@@ -77,4 +77,6 @@ docker compose logs
 Jos näkyy virhe "error while loading shared libraries: libsystemd.so.0: ELF load command alignment not page-aligned"
 seuraa https://github.com/GioF71/tidal-connect?tab=readme-ov-file#issue-on-the-raspberry-pi-5 näkyviä ohjeita.
 
-Jos kaikki on kunnossa "HiFiBerry DAC+" pitäisi olla näkyvissä Tidal sovelluksen "kaiuttimet" listassa
+Jos kaikki on kunnossa "HiFiBerry DAC+" pitäisi olla näkyvissä Tidal sovelluksen "kaiuttimet" listassa.
+
+Katso tarkemmat ohjeet tidal-connect git repositorystä https://github.com/GioF71/tidal-connect

@@ -2,8 +2,6 @@
 title: Raspberry Pi päivitys Moode Audio soittimelle
 layout: layouts/blog.njk
 leadText: Raspberry Pi päivitys Moode Audio soittimelle
-
-draft: true
 ---
 
 # Raspberry Pi päivitys

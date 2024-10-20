@@ -18,7 +18,7 @@ DA-muuuntimesta.
 
 ## Projektin komponentit
 
-![Päivityksen komponentit](../img/hifiberry_komponentit_raspberrypi5.jpeg)
+![Päivityksen komponentit](../img/hifiberry-dac+-komponentit.jpg)
 
 - [Raspberry Pi 5 4GB](https://www.raspberrypi.com/products/raspberry-pi-5/)
 - [HiFiBerry DAC2 Pro](https://www.hifiberry.com/shop/boards/hifiberry-dac2-pro/)
@@ -87,3 +87,7 @@ toimimasta hetkenä minä hyvänsä, mutta ainakin kirjoitushetkellä tämä toi
 
 Katso tarkemmat ohjeet tidal-connect git repositorystä
 [https://github.com/GioF71/tidal-connect](https://github.com/GioF71/tidal-connect)
+
+## Lopputulos
+
+![Lopputulos](../img/raspberrypi-5-koottu.jpg)

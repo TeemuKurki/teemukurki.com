@@ -57,9 +57,7 @@ Asennus pähkinänkuoressa
 ```bash
 # ssh yhteys moode audio raspberry Pi:hin
 ssh 192.168.1.110 
-
 # Esivaatimuksena docker ja git asennettuna Raspberry Pi:ssä
-
 # Mene koti kansioon
 cd ~
 git clone https://github.com/GioF71/tidal-connect.git

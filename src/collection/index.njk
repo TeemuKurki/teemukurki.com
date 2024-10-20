@@ -7,9 +7,23 @@ title: Teemu Kurki - CD Kokoelma
   <h1>CD Kokoelma</h1>
   <p>Musiikkikokoelma ja albumien tiedot haetaan <a href="https://musicbrainz.org/" target="_blank" rel="noopener noreferrer">MusicBrainz</a> palvelusta.</p>
   <p>Albumien kansikuvat haetaan <a href="https://coverartarchive.org/" target="_blank" rel="noopener noreferrer" >Cover Art Archive</a> palvelusta.</p>
-  <div class="cd-collection--list">
-    {% for album in albums %}
-    <section class="cd-collection--item" >
+  <ul class="cd-collection--list" >
+    {% for artist in artists %}
+    <li class="cd-collection--item" >
+      <section>
+        <h2 class="cd-collection--artist h4" >
+        {# TODO: Add link to artist page in musicbrainz #}
+        {{ artist.artist }}</h2>
+        <ul>
+          {% for album in artist.albums %}
+            <li class="cd-collection--album" >
+              <a target="_blank" href="https://musicbrainz.org/release/{{album.id}}" rel="noopener noreferrer">{{album.title}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+        <p>{{ album.title }}</p>
+      </section>
+    {# <section class="cd-collection--item" >
       <div>
         <h2>{{ album.artist }}</h2>
         <p>{{ album.title }}</p>
@@ -23,7 +37,7 @@ title: Teemu Kurki - CD Kokoelma
         onerror='this.onerror = null; this.src="{{ album.altImg }}" '
         />
       </a>
-    </section>
+    </section> #}
     {% endfor %}
-  </div>
+  </ul>
 </div>

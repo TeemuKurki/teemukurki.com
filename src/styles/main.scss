@@ -87,3 +87,12 @@ code {
 .content {
   width: min(100%, $content-width);
 }
+
+a.action {
+  color: unset;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

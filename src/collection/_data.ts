@@ -49,22 +49,29 @@ const resolveData = async () => {
     console.error("Failed to fetch music collection", error);
   }
 
-  const sortedCollection = sortAlbums(collections);
+  const groupByArtist = (albums: Album[]): Record<string, Album[]> => {
+    return sortAlbums(albums).reduce((acc, album) => {
+      if (!acc[album.artist]) {
+        acc[album.artist] = [];
+      }
+      acc[album.artist].push(album);
+      return acc;
+    }, {} as Record<string, Album[]>);
+  };
+
+  const groupedByArtist = groupByArtist(collections);
+  const result = Object.entries(groupedByArtist).map(([artist, albums]) => {
+    return {
+      artist: artist,
+      albums: albums,
+    };
+  });
   return {
-    albums: sortedCollection.map((album) => {
-      const [img, altImg] = album.img.split(";");
-      return {
-        img: img,
-        altImg: altImg,
-        artist: album.artist,
-        title: album.title,
-        id: album.id,
-      };
-    }),
+    artists: result,
   };
 };
 
 const data = await resolveData();
-const albums = data.albums;
+const artists = data.artists;
 
-export { albums };
+export { artists };

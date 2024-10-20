@@ -79,7 +79,8 @@ seuraa
 [https://github.com/GioF71/tidal-connect?tab=readme-ov-file#issue-on-the-raspberry-pi-5](https://github.com/GioF71/tidal-connect?tab=readme-ov-file#issue-on-the-raspberry-pi-5)
 näkyviä ohjeita.
 
-Jos kaikki on kunnossa "HiFiBerry DAC+" pitäisi olla näkyvissä Tidal sovelluksen "kaiuttimet" listassa.
+Jos kaikki on kunnossa "HiFiBerry DAC+" pitäisi olla näkyvissä Tidal sovelluksen "kaiuttimet" listassa. Moode Audion
+käyttöliittymällä ei tarvitse tehdä mitään muutoksia.
 
 Katso tarkemmat ohjeet tidal-connect git repositorystä
 [https://github.com/GioF71/tidal-connect](https://github.com/GioF71/tidal-connect)

@@ -82,8 +82,8 @@ näkyviä ohjeita.
 Jos kaikki on kunnossa "HiFiBerry DAC+" pitäisi olla näkyvissä Tidal sovelluksen "kaiuttimet" listassa. Moode Audion
 käyttöliittymällä ei tarvitse tehdä mitään muutoksia.
 
-Kuten tidal-connect:in readme:ssä lukee, tämä ei ole Tidalin puolelta tuettu ominaisuus ja saattaa lakata toimimasta
-hetkenä minä hyvänsä, mutta ainakin kirjoitushetkellä tämä toimii moitteetta.
+Huom. Kuten tidal-connect:in readme:ssä lukee, tämä ei ole Tidalin puolelta tuettu ominaisuus ja saattaa lakata
+toimimasta hetkenä minä hyvänsä, mutta ainakin kirjoitushetkellä tämä toimii moitteetta.
 
 Katso tarkemmat ohjeet tidal-connect git repositorystä
 [https://github.com/GioF71/tidal-connect](https://github.com/GioF71/tidal-connect)

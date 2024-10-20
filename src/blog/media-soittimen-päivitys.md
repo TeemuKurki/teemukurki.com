@@ -14,7 +14,7 @@ ylitse, jäänyt käyttöliittymä välilehti selaimeen auki. Epäilykseni on et
 yhteyttä mikä johtaa pitkä ajan kuluttua siihen että laitteesta loppuu muisti ja web serveri tiputetaan alas.
 
 Toinen syy vaihtoon oli heikohko äänenlaatu. En ole varma johtuko tämä Raspberry Pi Zero W:stä vai heikosta
-äänikortista.
+DA-muuuntimesta.
 
 ## Projektin komponentit
 
@@ -43,3 +43,40 @@ Moode Audion asetukset kannattaa tarkistaa läpi että kaikki on oikein. Varsink
 asetuksissa "Output device" ja "Named I2S device" on asetettuna oikein. Minulla HiFiBerry DAC2 Pro näkyi nimellä
 HiFiBerry DAC+. Minulla on ulkoinen vahvistin joten asetin vielä "Volume type" arvoksi "Fixed (0db)" jolloin hallitsen
 äänenvoimakkuutta pelkästään vahvistimen kautta.
+
+## Tidal Connect
+
+Otin päivityksen yhteydessä Tidal Connect ominaisuuden minkä avulla pystyn soittamaan musiikkia Moode Audion kautta
+suoraan tidal sovelluksesta. Moode Audio ei tue Tidal Connectia suoraan, joten käytän
+[Tony Trompin](https://github.com/TonyTromp) ja [Giovanni Fulcon](https://github.com/GioF71) kehittämää
+[tidal-connect](https://github.com/GioF71/tidal-connect) docker palvelua. Palvelun asennus oli helppoa ja suoraviivaista
+selkeän ohjeistuksen ansiosta.
+
+Asennus pähkinänkuoressa
+
+```bash
+# ssh yhteys moode audio raspberry Pi:hin
+ssh 192.168.1.110 
+
+# Esivaatimuksena docker ja git asennettuna Raspberry Pi:ssä
+
+# Mene koti kansioon
+cd ~
+git clone https://github.com/GioF71/tidal-connect.git
+cd tidal-connect
+# Generoi vaadittavan asetukset "HiFiBerry DAC+" DA-muuntimelle
+bash ./configure.sh -n "sndrpihifiberry" -f "HiFiBerry DAC+" -m "Raspberry Pi"
+# Käynnistä docker kontti taustalla
+docker compose up -d
+```
+
+Kun docker kontti on käynistynyt odota hetki ja tarkista lokeilta näkyykö ongelmia
+
+```bash
+docker compose logs
+```
+
+Jos näkyy virhe "error while loading shared libraries: libsystemd.so.0: ELF load command alignment not page-aligned"
+seuraa https://github.com/GioF71/tidal-connect?tab=readme-ov-file#issue-on-the-raspberry-pi-5 näkyviä ohjeita.
+
+Jos kaikki on kunnossa "HiFiBerry DAC+" pitäisi olla näkyvissä Tidal sovelluksen "kaiuttimet" listassa

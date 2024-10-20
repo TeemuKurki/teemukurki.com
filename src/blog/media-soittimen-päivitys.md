@@ -1,6 +1,7 @@
 ---
 title: Raspberry Pi päivitys Moode Audio soittimelle
 layout: layouts/blog.njk
+image: ../img/raspberrypi-5-koottu.jpg
 leadText: Raspberry Pi päivitys Moode Audio soittimelle
 ---
 

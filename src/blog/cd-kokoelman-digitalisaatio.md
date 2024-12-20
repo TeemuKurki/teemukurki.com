@@ -65,17 +65,59 @@ ja valitsee ala oikeasta nurkasta halutun äänitiedosto formaatin ja tracks tai
 kappale on oma tiedosto vai että koko albumi on yhdessä tiedostossa. Minä olen valinnut flac ja tracks jolloin
 jokaisesta kappaleesta tulee oma haviötön tiedosto.
 
-CUERipper osaa hakea albumin perustiedot jotka usein riittävät peruskäyttöön, mutta jos haluat hakea enemmän metatietoa
-kappaleille kuten genretiedot suosittelen käyttämään [MusicBrainz Picard](https://picard.musicbrainz.org/) ohjelmaa.
-Picard on hieman monimutkainen ohjelma käyttää mutta heidän sivujensa Quick Start ohjeilla pääsee hyvin liikkeelle.
-
-_Vinkki: jos haluat että Picard hakee genre tiedot käy klikkaamassa päälle Options -> Options -> Genres -> Use gernes
-from MusicBrainz. Suosittelen laskemaan Minimal genre usage reilusti alle 90% jos haluat saada myös alagenrejä._
-
 ### Windows Media Player
 
 Jos CUERipper ei onnistu rippaamaan levyä yritämme uudelleen Windows Media Playerillä. Windows media player ei varmenna
 rippauksen laatua joten kannttaa itse kuunnella tiedostot läpi ennen kuin lataa niitä serverille
+
+### A Better CD Encoder (abcde)
+
+Jos käytät Mac tai Linux käyttöjärjestelmää etkä pelkää käyttää hieman komentoriviä, voit ripata levyn abcde ohjelmalla.
+
+Asenna abcde komentoriviltä
+
+Asennus Homebrewn kautta Macille
+
+```bash
+brew install abcde
+# Jos haluat ripata levyt flac muotoon
+brew install flac
+```
+
+Asennus aptin kautta Linuxille
+
+```bash
+# Ubuntu/Linux mint
+sudo apt install abcde
+# Jos haluat ripata levyt flac muotoon
+sudo apt install flac
+```
+
+Levyn rippaaminen
+
+```bash
+# Rippaa levyn flac tiedostoiksi 
+abcde -o flac
+```
+
+Perus asetuksilla pääset jo pitkälle, mutta jos haluat säädellä asetuksia voit luoda .abcde.conf konfiguraatio tiedoston
+kotihakemistoon ja asettaa sinne haluamasi asetukset. [Andrew Strong](https://www.andrews-corner.org) on tehnyt kasan
+valmiita konfiguraatio tiedostoja eri käyttötapauksiin mitkä voit ladata täältä
+[https://www.andrews-corner.org/abcde/](https://www.andrews-corner.org/abcde/) Kun olet ladannut tiedoston siirrä se
+kotihakemistoon ja uudelleen nimeä se .abcde.conf nimiseksi.
+
+_Huomio. Jos ihmettelet miksi rippauksen aikana näkyy /track01.wav vaikka halusit flac tiedostoja niin älä huoli abcde
+kyllä kääntää ne flac muotoon_
+
+### Kappaleiden metatiedot
+
+Useat rippaus työkalut osaa hakea albumin perustiedot jotka usein riittävät peruskäyttöön, mutta jos haluat hakea
+enemmän metatietoa kappaleille kuten genretiedot suosittelen käyttämään
+[MusicBrainz Picard](https://picard.musicbrainz.org/) ohjelmaa. Picard on hieman monimutkainen ohjelma käyttää mutta
+heidän sivujensa Quick Start ohjeilla pääsee hyvin liikkeelle.
+
+_Vinkki: jos haluat että Picard hakee genre tiedot käy klikkaamassa päälle Options -> Options -> Genres -> Use gernes
+from MusicBrainz. Suosittelen laskemaan Minimal genre usage reilusti alle 90% jos haluat saada myös alagenrejä._
 
 ### SFTP
 

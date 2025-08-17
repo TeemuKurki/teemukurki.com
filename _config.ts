@@ -12,10 +12,13 @@ import resolveUrls from "lume/plugins/resolve_urls.ts";
 import type { Options } from "lume/plugins/markdown.ts";
 import { date } from "lume/plugins/date.ts";
 import { fi } from "npm:date-fns/locale/fi";
+import anchor from "npm:markdown-it-anchor";
+import toc from "npm:markdown-it-table-of-contents";
 
 const webappUrl = Deno.env.get("WEBAPP_URL");
 
 const markdown: Options = {
+  plugins: [anchor, toc],
   rules: {
     "image": (tokens, idx, _options, _env, slf) => {
       const token = tokens[idx];

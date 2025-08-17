@@ -48,9 +48,6 @@ const site = lume({
   src: "./src",
   dest: "_site",
   includes: "_includes",
-  components: {
-    variable: "comp",
-  },
 }, { markdown });
 
 site.use(nunjucks());
@@ -70,5 +67,8 @@ site.remoteFile(
   "styles/generated-code-highlight.scss",
   "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/a11y-light.min.css",
 );
+
+site.add("styles");
+site.add("img");
 
 export default site;

@@ -1,7 +1,7 @@
-@import "reset.scss";
-@import "main.scss";
-@import "defaults.scss";
-@import "generated-code-highlight.scss";
+@use "reset.scss";
+@use "main.scss";
+@use "defaults.scss";
+@use "generated-code-highlight.scss";
 
-@import "blog-list.scss";
-@import "collection-list.scss";
+@use "blog-list.scss";
+@use "collection-list.scss";

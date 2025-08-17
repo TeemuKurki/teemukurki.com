@@ -8,15 +8,29 @@
     "test:coverage": "deno test --coverage --allow-env && deno coverage"
   },
   "imports": {
-    "@std/dotenv": "jsr:@std/dotenv@^0.225.0",
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.5",
     "@teemukurki/rate-limiter": "jsr:@teemukurki/rate-limiter@^0.0.3",
-    "lume/": "https://deno.land/x/lume@v2.3.3/",
-    "digest-fetch": "npm:digest-fetch@3.1.1"
+    "lume/": "https://deno.land/x/lume@v3.0.6/",
+    "digest-fetch": "npm:digest-fetch@3.1.1",
+    "lume/jsx-runtime": "https://deno.land/x/ssx@v0.1.12/jsx-runtime.ts"
   },
   "compilerOptions": {
-    "types": ["lume/types.ts"]
+    "types": [
+      "lume/types.ts"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "lume"
   },
   "fmt": {
     "lineWidth": 120
+  },
+  "unstable": [
+    "temporal",
+    "fmt-component"
+  ],
+  "lint": {
+    "plugins": [
+      "https://deno.land/x/lume@v3.0.6/lint.ts"
+    ]
   }
 }

@@ -1,8 +1,15 @@
 ---
 layout: layouts/article.njk
+author: Teemu Kurki
 ---
 
-<h1>{{ title }}</h1>
+<h1 class="article__title">{{ title }}</h1>
+<div class="article__author">
+  {{ author }}
+  <time datetime="{{createdAt | date("ATOM")}}">
+    {{ createdAt | date("HUMAN_DATE", "fi") }}
+  </time>
+</div>
 <div>
   {{ content | md | safe }}
 </div>

@@ -11,6 +11,8 @@ import picture from "lume/plugins/picture.ts";
 import transform_images from "lume/plugins/transform_images.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
 import type { Options } from "lume/plugins/markdown.ts";
+import { date } from "lume/plugins/date.ts";
+import { fi } from "npm:date-fns/locale/fi";
 
 const webappUrl = Deno.env.get("WEBAPP_URL");
 
@@ -60,6 +62,9 @@ site.use(metas());
 site.use(resolveUrls());
 site.use(picture());
 site.use(transform_images());
+site.use(date({
+  locales: { fi },
+}));
 
 site.filter("log", (value) => console.log(value));
 

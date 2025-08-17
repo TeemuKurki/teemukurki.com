@@ -5,6 +5,8 @@ image: ../img/hifiberry_komponentit.jpeg
 leadText: Digitalisoin mun CD kokoelman ja lisään ne Raspberry Pi pohjaiselle musiikki serverille ja soittimelle
 createdAt: 2024-06-10T21:32:00+03:00
 author: Teemu Kurki
+tags:
+  - blog
 ---
 
 # Projekti

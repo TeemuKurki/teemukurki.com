@@ -4,6 +4,8 @@ layout: layouts/blog.njk
 image: ../img/raspberrypi-5-koottu.jpg
 leadText: Raspberry Pi päivitys Moode Audio soittimelle
 createdAt: 2024-09-24T20:56:01+03:00
+tags:
+  - blog
 ---
 
 # Raspberry Pi päivitys

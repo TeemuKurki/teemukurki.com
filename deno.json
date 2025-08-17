@@ -3,6 +3,7 @@
     "lume": "echo \"import 'lume/cli.ts'\" | deno run --allow-read --allow-ffi --allow-env --allow-write --allow-net --allow-sys -",
     "build": "deno task lume",
     "serve": "deno task deleteImgMeta && deno task lume -s",
+    "dev": "LUME_DRAFTS='true' deno task serve",
     "deleteImgMeta": "exiftool -overwrite_original -if '$MIMEtype=~/video/ or $MIMEtype=~/image/' -all= src/img/*",
     "test": "deno test --allow-env",
     "test:coverage": "deno test --coverage --allow-env && deno coverage"

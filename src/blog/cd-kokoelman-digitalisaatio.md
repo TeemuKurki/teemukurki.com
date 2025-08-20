@@ -9,6 +9,8 @@ tags:
   - blog
 ---
 
+[[toc]]{#tmp_toc}
+
 # Projekti
 
 Olen vähän yli kymmenen vuotta ostellut suht aktiivisesti CD-levyjä ja minulle on tässä vuosien varrella kertynyt noin

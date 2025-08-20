@@ -2,6 +2,16 @@
 layout: layouts/root.njk
 ---
 
-<article class="content">  
-    {{ content | md | safe }}
+<nav id="toc"></nav>
+
+<article class="content">
+  {{ content | md | safe }}
 </article>
+
+<script>
+  // Move TOC from article to nav element
+  const tmpToc = document.getElementById("tmp_toc");
+  const toc = document.getElementById("toc");
+  toc.innerHTML = tmpToc.innerHTML;
+  tmpToc.outerHTML = "";
+</script>

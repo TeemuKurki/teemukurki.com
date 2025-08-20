@@ -9,3 +9,11 @@ tags:
 
 draft: true
 ---
+
+# Otsikko
+
+## Jellyfin asennus Raspberry pi
+
+## Paikallisten tekstityksien lataaminen ja käyttöönotto
+
+## Tekstitysten salliminen Jellyfin käyttäjälle

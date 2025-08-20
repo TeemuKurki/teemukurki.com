@@ -15,10 +15,19 @@ import { fi } from "npm:date-fns/locale/fi";
 import anchor from "npm:markdown-it-anchor";
 import toc from "npm:markdown-it-table-of-contents";
 
+import scriptHash from "./customPlugins/scriptHash.ts";
+
 const webappUrl = Deno.env.get("WEBAPP_URL");
 
 const markdown: Options = {
-  plugins: [anchor, toc],
+  plugins: [anchor, [toc, {
+    includeLevel: [2, 3],
+    //containerHeaderHtml: '<section id="tmp_toc">',
+    transformContainerOpen: () => {
+      return '<nav id="tmp_toc">';
+    },
+  }]],
+  extensions: [".njk", ".md"],
   rules: {
     "image": (tokens, idx, _options, _env, slf) => {
       const token = tokens[idx];
@@ -66,6 +75,8 @@ site.use(transform_images());
 site.use(date({
   locales: { fi },
 }));
+
+site.use(scriptHash());
 
 site.filter("log", (value) => console.log(value));
 

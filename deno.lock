@@ -27,6 +27,7 @@
     "jsr:@std/crypto@1.0.3": "1.0.3",
     "jsr:@std/crypto@1.0.5": "1.0.5",
     "jsr:@std/dotenv@~0.225.5": "0.225.5",
+    "jsr:@std/encoding@*": "1.0.10",
     "jsr:@std/encoding@0.224": "0.224.3",
     "jsr:@std/encoding@0.224.3": "0.224.3",
     "jsr:@std/encoding@1.0.0-rc.1": "1.0.0-rc.1",
@@ -4122,7 +4123,8 @@
     "https://deno.land/x/xml@7.0.0/mod.ts": "ca2bb5a9a90d236a2b6242c8643717e0c53f645092d2407792dad728e1367f9a",
     "https://deno.land/x/xml@7.0.0/parse.ts": "8ae0d8339f589c29ab203dd7887e06325e2064efedfe9c61e2cd6d907443b664",
     "https://deno.land/x/xml@7.0.0/stringify.ts": "f604d3d88b8bdaff11dbc9d57a6e98fd9b353e3bfbafcaa3f421e6b470ea0e02",
-    "https://deno.land/x/xml@7.0.0/wasm_xml_parser/wasm_xml_parser.js": "960229e82be5dfc58d2d4fe47d800034f892f8f13da4492e0a95fee64050fb34"
+    "https://deno.land/x/xml@7.0.0/wasm_xml_parser/wasm_xml_parser.js": "960229e82be5dfc58d2d4fe47d800034f892f8f13da4492e0a95fee64050fb34",
+    "https://raw.githubusercontent.com/lumeland/experimental-plugins/e63cbdb10ccdc5c8a9e9bd68347f284d8fd8af31/csp/mod.ts": "39316f6ec3fbb457e4045f37b28794f438798f72ddae9b297ac0469ef670bd7b"
   },
   "workspace": {
     "dependencies": [

@@ -1,6 +1,6 @@
 // deno-lint-ignore-file ban-ts-comment
-import { assertEquals } from "jsr:@std/assert@0.226.0";
-import { stub } from "jsr:@std/testing@0.225.3/mock";
+import { assertEquals } from "@std/assert";
+import { stub } from "@std/testing/mock";
 import { Catalog, ReleaseCollection } from "./Catalog.ts";
 import DigestClient from "digest-fetch";
 import { mockFetchJson } from "../../test/utils.ts";

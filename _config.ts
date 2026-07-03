@@ -11,6 +11,7 @@ import picture from "lume/plugins/picture.ts";
 import transform_images from "lume/plugins/transform_images.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
 import type { Options } from "lume/plugins/markdown.ts";
+import extractDate from "lume/plugins/extract_date.ts";
 
 const webappUrl = Deno.env.get("WEBAPP_URL");
 
@@ -51,6 +52,7 @@ const site = lume({
 }, { markdown });
 
 site.use(nunjucks());
+site.use(extractDate());
 site.use(code_highlight());
 site.use(sass());
 site.use(sitemap());

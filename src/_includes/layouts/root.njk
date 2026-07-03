@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/styles/styles.css">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; frame-ancestors 'none';">
   </head>
   <body>
     <div class="body">
       <header>
         <nav data-uri={{url}}>
-          <a class="nav-link {{'active' if url === '/' else "" }}" href="/">Etusivu</a>
-          <a class="nav-link {{'active' if url.includes('/blog/') else "" }}" href="/blog">Blogi</a>
-          <a class="nav-link {{'active' if url.includes('/collection/') else "" }}" href="/collection">Kokoelma</a>
+          <a class="nav-link {{'active' if url === '/' else " " }}" href="/">Etusivu</a>
+          <a class="nav-link {{'active' if url.includes('/blog/') else " " }}" href="/blog">Blogi</a>
+          <a class="nav-link {{'active' if url.includes('/collection/') else " " }}" href="/collection">Kokoelma</a>
         </nav>
       </header>
       <main class="main">

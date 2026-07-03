@@ -16,7 +16,7 @@ title: Teemu Kurki - CD Kokoelma
         <ul>
           {% for album in artist.albums %}
             <li class="cd-collection--album" >
-              <a target="_blank" href="https://musicbrainz.org/release/{{album.id}}" rel="noopener noreferrer">{{album.title}}</a>
+              <a target="_blank" href="https://musicbrainz.org/release/{{ album.id }}" rel="noopener noreferrer">{{ album.title }}</a>
             </li>
           {% endfor %}
         </ul>
@@ -27,7 +27,7 @@ title: Teemu Kurki - CD Kokoelma
         <h2>{{ album.artist }}</h2>
         <p>{{ album.title }}</p>
       </div>
-      <a target="_blank" href="https://musicbrainz.org/release/{{album.id}}" rel="noopener noreferrer">
+      <a target="_blank" href="https://musicbrainz.org/release/{{ album.id }}" rel="noopener noreferrer">
         <img
         class="album-cover shadow"
         loading="lazy"

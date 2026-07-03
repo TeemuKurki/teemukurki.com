@@ -3,6 +3,7 @@
     "lume": "echo \"import 'lume/cli.ts'\" | deno run --allow-read --allow-ffi --allow-env --allow-write --allow-net --allow-sys -",
     "build": "deno task lume",
     "serve": "deno task deleteImgMeta && deno task lume -s",
+    "serve:draft": "deno task deleteImgMeta && LUME_DRAFTS=true deno task lume -s",
     "deleteImgMeta": "exiftool -overwrite_original -if '$MIMEtype=~/video/ or $MIMEtype=~/image/' -all= src/img/*",
     "test": "deno test --allow-env",
     "test:coverage": "deno test --coverage --allow-env && deno coverage"
@@ -15,22 +16,15 @@
     "lume/jsx-runtime": "https://deno.land/x/ssx@v0.1.12/jsx-runtime.ts"
   },
   "compilerOptions": {
-    "types": [
-      "lume/types.ts"
-    ],
+    "types": ["lume/types.ts"],
     "jsx": "react-jsx",
     "jsxImportSource": "lume"
   },
   "fmt": {
     "lineWidth": 120
   },
-  "unstable": [
-    "temporal",
-    "fmt-component"
-  ],
+  "unstable": ["temporal", "fmt-component"],
   "lint": {
-    "plugins": [
-      "https://deno.land/x/lume@v3.0.6/lint.ts"
-    ]
+    "plugins": ["https://deno.land/x/lume@v3.0.6/lint.ts"]
   }
 }
